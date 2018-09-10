@@ -900,7 +900,7 @@ void mcuRestart(void)
 
 int _write(int fd, char *pBuffer, int size)
 {
-	HAL_UART_Transmit(&huart1, pBuffer, size, 0xff);
+	HAL_UART_Transmit(&huart3, pBuffer, size, 0xff);
 	return size;
 }
 
@@ -915,6 +915,23 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	{
 	//		keyHandle((keysTypedef_t *)&keys);
 			gizTimerMs();
+
+			modbusSendCount++;
+			switch (modbusSendCount)
+			{
+			case 1000:modbusPullFlag01 = 1;
+				break;
+			case 2000:modbusPullFlag02 = 1;
+				break;
+			case 3000:modbusPullFlag03 = 1;
+				break;
+			case 4000:modbusPullFlag04 = 1;
+				modbusSendCount = 0;
+				break;
+			default:
+				break;
+			}
+
 	}
 }
 
@@ -951,6 +968,9 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef*UartHandle)
 */
 void uartInit(void)
 {
+
+	__HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE);
+	__HAL_UART_ENABLE_IT(&huart1, UART_IT_IDLE);
 	HAL_UART_Receive_IT(&huart2, (uint8_t *)&aRxBuffer, 1);//开启下一次接收中断  
 }
 

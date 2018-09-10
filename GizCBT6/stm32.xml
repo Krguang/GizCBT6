@@ -45,7 +45,7 @@
     <AllDependencies>
       <ProjectDependency>
         <RelativePath>..\MDK-ARM\GizCBT6.uvprojx</RelativePath>
-        <Timestamp>131810380599623817</Timestamp>
+        <Timestamp>131810427711340557</Timestamp>
       </ProjectDependency>
     </AllDependencies>
     <RootDirectory>
@@ -109,10 +109,6 @@
           </Files>
         </VirtualDirectorySnapshot>
         <VirtualDirectorySnapshot>
-          <Name>::CMSIS</Name>
-          <Files />
-        </VirtualDirectorySnapshot>
-        <VirtualDirectorySnapshot>
           <Name>Drivers</Name>
           <Subdirectories>
             <VirtualDirectorySnapshot>
@@ -168,6 +164,10 @@
               </Files>
             </VirtualDirectorySnapshot>
           </Subdirectories>
+          <Files />
+        </VirtualDirectorySnapshot>
+        <VirtualDirectorySnapshot>
+          <Name>::CMSIS</Name>
           <Files />
         </VirtualDirectorySnapshot>
       </Subdirectories>
