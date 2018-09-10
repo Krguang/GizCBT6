@@ -1,0 +1,9 @@
+gizcbt6\datapointtools.o: ..\Utils\dataPointTools.c
+gizcbt6\datapointtools.o: ..\Utils\dataPointTools.h
+gizcbt6\datapointtools.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+gizcbt6\datapointtools.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+gizcbt6\datapointtools.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+gizcbt6\datapointtools.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+gizcbt6\datapointtools.o: ..\Utils\common.h
+gizcbt6\datapointtools.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+gizcbt6\datapointtools.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h

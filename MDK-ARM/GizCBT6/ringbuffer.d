@@ -1,0 +1,9 @@
+gizcbt6\ringbuffer.o: ..\Utils\ringbuffer.c
+gizcbt6\ringbuffer.o: ..\Utils\ringBuffer.h
+gizcbt6\ringbuffer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+gizcbt6\ringbuffer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+gizcbt6\ringbuffer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+gizcbt6\ringbuffer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+gizcbt6\ringbuffer.o: ..\Utils\common.h
+gizcbt6\ringbuffer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+gizcbt6\ringbuffer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
