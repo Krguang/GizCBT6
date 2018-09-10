@@ -5139,6 +5139,7 @@ static void gizProtocolAckHandle(void)
         else
         {
             memset((uint8_t *)&gizwitsProtocol.waitAck, 0, sizeof(protocolWaitAck_t));
+			mcuRestart();
         }
     }
 }
