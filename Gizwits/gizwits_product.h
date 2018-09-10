@@ -110,6 +110,12 @@ extern "C" {
 /** User area the current device state structure*/
 extern dataPoint_t currentDataPoint;
 
+extern volatile uint16_t localArray[];
+extern volatile uint8_t modbusPullFlag01;
+extern volatile uint8_t modbusPullFlag02;
+extern volatile uint8_t modbusPullFlag03;
+extern volatile uint8_t modbusPullFlag04;
+
 void gizTimerMs(void);
 void timerInit(void);
 void uartInit(void);

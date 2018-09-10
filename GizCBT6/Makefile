@@ -36,7 +36,7 @@ error:
 	$(error Invalid configuration, please check your inputs)
 endif
 
-SOURCEFILES := ../Src/usart.c ../Src/stm32f1xx_it.c ../Src/gpio.c ../Src/tim.c ../Src/main.c ../Src/stm32f1xx_hal_msp.c ../Gizwits/gizwits_product.c ../Gizwits/gizwits_protocol.c ../Utils/common.c ../Utils/dataPointTools.c ../Utils/ringbuffer.c ../Src/system_stm32f1xx.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c $(BSP_ROOT)/STM32F1xxxx/StartupFiles/startup_stm32f103xb.c
+SOURCEFILES := ../Src/modbusToPC.c ../Src/usart.c ../Src/stm32f1xx_it.c ../Src/gpio.c ../Src/tim.c ../Src/main.c ../Src/stm32f1xx_hal_msp.c ../Gizwits/gizwits_product.c ../Gizwits/gizwits_protocol.c ../Utils/common.c ../Utils/dataPointTools.c ../Utils/ringbuffer.c ../Src/system_stm32f1xx.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c ../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c $(BSP_ROOT)/STM32F1xxxx/StartupFiles/startup_stm32f103xb.c
 EXTERNAL_LIBS := 
 EXTERNAL_LIBS_COPIED := $(foreach lib, $(EXTERNAL_LIBS),$(BINARYDIR)/$(notdir $(lib)))
 
@@ -180,6 +180,10 @@ $(BINARYDIR)/%.o : %.cxx $(all_make_files) |$(BINARYDIR)
 	$(CC) $(CFLAGS) $(CXXFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
 
 #VisualGDB: GeneratedRules				#<--- All lines below are auto-generated. Remove this line to suppress auto-generation of file rules.
+
+
+$(BINARYDIR)/modbusToPC.o : ../Src/modbusToPC.c $(all_make_files) |$(BINARYDIR)
+	$(CC) $(CFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
 
 
 $(BINARYDIR)/usart.o : ../Src/usart.c $(all_make_files) |$(BINARYDIR)

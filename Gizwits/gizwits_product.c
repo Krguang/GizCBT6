@@ -18,9 +18,19 @@
 #include <string.h>
 #include "gizwits_product.h"
 #include "common.h"
+#include "usart.h"
+#include "tim.h"
 
 static uint32_t timerMsCount;
 uint8_t aRxBuffer;
+
+volatile uint16_t localArray[512];
+uint16_t modbusSendCount;
+volatile uint8_t modbusPullFlag01;
+volatile uint8_t modbusPullFlag02;
+volatile uint8_t modbusPullFlag03;
+volatile uint8_t modbusPullFlag04;
+
 
 /** User area the current device state structure*/
 dataPoint_t currentDataPoint;
