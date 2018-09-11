@@ -4876,11 +4876,11 @@ static int32_t gizReportData(uint8_t action, uint8_t *gizdata, uint32_t len)
 
     return 0;
 }/**
-* @brief Datapoints reporting mechanism
+* @brief Datapoints reporting mechanism		数据报机制
 *
-* 1. Changes are reported immediately
+* 1. Changes are reported immediately		立即报告更改
 
-* 2. Data timing report , 600000 Millisecond
+* 2. Data timing report , 600000 Millisecond 数据定时报告
 * 
 *@param [in] currentData       : Current datapoints value
 * @return : NULL
@@ -4911,6 +4911,21 @@ static void gizDevReportPolicy(dataPoint_t *currentData)
 
         lastRepTime = timeNow;
     }
+
+	if (1 == currentDataPoint.valueonline_flag)
+	{
+		currentDataPoint.valueonline_flag = 0;
+		GIZWITS_LOG("dev online report data\n");
+		memset((uint8_t *)&gizwitsProtocol.waitReportDatapointFlag, 0xFF, DATAPOINT_FLAG_LEN);
+		if (0 == gizDataPoints2ReportData(currentData, gizwitsProtocol.reportData, (uint32_t *)&gizwitsProtocol.reportDataLen))
+		{
+			gizReportData(ACTION_REPORT_DEV_STATUS, gizwitsProtocol.reportData, gizwitsProtocol.reportDataLen);
+		}
+		memcpy((uint8_t *)&gizwitsProtocol.gizLastDataPoint, (uint8_t *)currentData, sizeof(dataPoint_t));
+
+		lastRepTime = timeNow;
+	}
+
     free(waitReportDataPtr);
 }
 

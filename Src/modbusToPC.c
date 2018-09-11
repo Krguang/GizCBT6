@@ -49,7 +49,7 @@ static void sendDataMaster03_2() {
 	txBuf[2] = 0x01;
 	txBuf[3] = 0x2c;
 	txBuf[4] = 0x00;
-	txBuf[5] = 90;//¶Á90Î»
+	txBuf[5] = 91;//¶Á91Î»
 	temp = GetCRC16(txBuf, 6);
 	txBuf[6] = (uint8_t)(temp & 0xff);
 	txBuf[7] = (uint8_t)(temp >> 8);

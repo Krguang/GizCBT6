@@ -28,7 +28,7 @@ extern "C" {
 #include <string.h>
 #include "common.h"
 
-                                                                                                                  
+
 #define SEND_MAX_TIME       5000                     ///< 200ms resend
 #define SEND_MAX_NUM        3                       ///< resend times
                                                     
