@@ -2749,7 +2749,7 @@ static int8_t ICACHE_FLASH_ATTR gizCheckReport(dataPoint_t *cur, dataPoint_t *la
 
 /**
 * @brief User data point data is converted to wit the cloud to report data point data
-*
+*			用户数据点数据被转换为云来报告数据点数据
 * @param [in] dataPoints: user data point data address
 * @param [out] devStatusPtr: wit the cloud data point data address
 *
